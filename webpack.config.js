@@ -52,7 +52,13 @@ module.exports = {
         },{
             test: /\.styl$/,
             loader: "style!css!postcss!stylus"
-        },{ test: /\.(jpe?g|png|gif|svg)$/, loader: 'file?name=img/[name].[ext]!image-webpack'}
+        },{
+            test: /\.(jpe?g|png|gif)$/,
+            loader: 'file?name=img/[name].[ext]!image-webpack'
+        },{
+            test: /\.woff$/,
+            loader: 'url?limit=1000000'
+        }
     ]
   },
   imagemin: {
