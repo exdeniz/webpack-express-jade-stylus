@@ -1,7 +1,4 @@
 // Reload jade from webpack
-
-
-
 function requireAll(r) { r.keys().forEach(r); }
 
 // load images
@@ -25,3 +22,29 @@ requireAll(require.context('./assets/stylus/ui/', true, /\.styl$/));
 
 // load block
 requireAll(require.context('./assets/stylus/block/', true, /\.styl$/));
+
+
+import { menu } from './component/menu/menu.js'
+import { grid } from './component/datatables/datatables.js'
+import { dropdown } from './component/dropdown/dropdown.js'
+import { checkbox } from './component/checkbox/checkbox.js'
+import { filter } from './component/dropdown/filter.js'
+import { datepick } from './component/date/date.js'
+import { timepick } from './component/date/timepicker.js'
+import { select } from './component/select/select.js'
+import { spinner } from './component/spiner/spiner.js'
+import { inputmask } from './component/inputmask/inputmask.js'
+$( document ).ready(function () {
+        menu()
+        grid()
+        dropdown()
+        checkbox()
+        filter()
+        datepick()
+        select()
+        spinner()
+        timepick()
+        inputmask()
+    }
+
+)

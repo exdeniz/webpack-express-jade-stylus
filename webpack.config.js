@@ -3,7 +3,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-
+var BowerWebpackPlugin = require("bower-webpack-plugin");
 
 // postcss
 var autoprefixer = require('autoprefixer');
@@ -32,13 +32,24 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
-    })
+    }),
+    new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery"
+
+    }),
+    new BowerWebpackPlugin({
+        modulesDirectories: ['bower_components'],
+        manifestFiles: ['bower.json', '.bower.json'],
+        includes: /.*/,
+        excludes: /.*\.less$/
+      })
   ],
   module: {
     loaders: [
         {
           test: /\.js?$/,
-          exclude: /node_modules/,
+          exclude: /(node_modules|bower_components)/,
           loader: 'babel'
         }, {
           test: /\.json?$/,
@@ -81,5 +92,6 @@ module.exports = {
     },
   postcss: function () {
         return [autoprefixer, clearfix];
-    }
+    },
+
 };

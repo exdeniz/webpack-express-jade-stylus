@@ -6,7 +6,7 @@ import webpackMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import config from './webpack.config.js';
 import jade from 'jade';
-
+import favicon from 'serve-favicon';
 const isDeveloping = process.env.NODE_ENV !== 'production';
 const port = isDeveloping ? 3000 : process.env.PORT;
 const app = express();
@@ -29,6 +29,8 @@ if (isDeveloping) {
     app.set('views', __dirname + '/app/views');
     app.use(middleware);
     app.use(webpackHotMiddleware(compiler));
+
+    app.use(favicon('favicon.ico'));
     //app.use(express.static(__dirname + '/dist/img'));
     app.get('/index', function response(req, res) {
         // res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'dist/index.html')));

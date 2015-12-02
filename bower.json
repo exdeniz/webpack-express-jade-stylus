@@ -1,0 +1,24 @@
+{
+  "name": "FastFronendDev",
+  "description": "Fast Fronend developer template",
+  "main": "app.js",
+  "authors": [
+    "Igor Pnev <tkospb@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "es6"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "smartmenus": "1.0.0-beta1",
+    "datatables.net": "~1.10.10"
+  }
+}
