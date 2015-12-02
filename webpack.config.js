@@ -8,8 +8,11 @@ var BowerWebpackPlugin = require("bower-webpack-plugin");
 // postcss
 var autoprefixer = require('autoprefixer');
 var clearfix = require('postcss-clearfix');
-
-
+var postcsscenter = require('postcss-center');
+var postcssshort = require('postcss-short');
+var postcsseasings = require('postcss-easings');
+var postassets = require('postcss-assets');
+var lost = require('lost');
 module.exports = {
   devtool: 'eval-source-map',
   entry: [
@@ -91,7 +94,10 @@ module.exports = {
     }
     },
   postcss: function () {
-        return [autoprefixer, clearfix];
+        return [autoprefixer, clearfix, postcsscenter, postcssshort, postcsseasings,  postassets({
+                    loadPaths: ['app/assets/icons/']
+
+                }), lost];
     },
 
 };

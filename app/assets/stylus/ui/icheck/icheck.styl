@@ -1,0 +1,42 @@
+.iradio
+    display inline-block
+    vertical-align middle
+    cursor pointer
+    position relative
+    size 20px
+    background-color #DFDFDF
+    border-radius 10px
+    border 1px solid #A6A6A6
+    margin-right 15px
+    &.checked
+        &:after
+            display block
+            position absolute
+            background-color #00ADEF
+            content ''
+            size 10px
+            border-radius 5px
+            transition all .5s
+            top center
+            left center
+.icheckbox
+    display inline-block
+    vertical-align middle
+    cursor pointer
+    position relative
+    size 16px
+    line-height 16px
+    background-color #DFDFDF
+    border 1px solid #A6A6A6
+    &.checked
+        &:after
+            display block
+            position absolute
+            background-repeat no-repeat
+            background-position center center
+            background-image inline("iconCheck.svg")
+            content ''
+            size 13px
+            left 1px
+.icheckbox.error
+    border 2px solid #D65454

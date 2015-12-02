@@ -1,0 +1,157 @@
+.jsgrid
+    position relative
+    overflow hidden
+    font-size 1em
+
+.jsgrid, .jsgrid *, .jsgrid *:before, .jsgrid *:after
+    box-sizing border-box
+
+.jsgrid input,
+.jsgrid textarea,
+.jsgrid select
+    font-size 1em
+
+.jsgrid-grid-header
+    overflow-x hidden
+    overflow-y scroll
+    user-select none
+
+.jsgrid-grid-body
+    overflow-x auto
+    overflow-y scroll
+    overflow-scrolling touch
+
+.jsgrid-table
+    width 100%
+    table-layout fixed
+    border-collapse collapse
+    border-spacing 0
+    td
+        padding 0.5em 0.5em
+.jsgrid-table td,
+.jsgrid-table th
+    box-sizing border-box
+
+.jsgrid-align-left
+    text-align left
+
+.jsgrid-align-center
+    text-align center
+
+.jsgrid-align-right
+    text-align right
+
+.jsgrid-header-row
+    & > th
+        padding .5em .5em
+
+.jsgrid-filter-row input,
+.jsgrid-filter-row textarea,
+.jsgrid-filter-row select,
+.jsgrid-edit-row input,
+.jsgrid-edit-row textarea,
+.jsgrid-edit-row select,
+.jsgrid-insert-row input,
+.jsgrid-insert-row textarea,
+.jsgrid-insert-row select
+    width 90%
+    padding .3em .5em
+
+.jsgrid-filter-row input[type='checkbox'],
+.jsgrid-edit-row input[type='checkbox'],
+.jsgrid-insert-row input[type='checkbox']
+    width auto
+
+.jsgrid-header-row > th,
+.jsgrid-filter-row > td,
+.jsgrid-insert-row > td,
+.jsgrid-edit-row > td
+    text-align center
+
+.jsgrid-selected-row
+    td
+        cursor pointer
+
+.jsgrid-nodata-row
+    td
+        padding .5em 0
+        text-align center
+
+.jsgrid-header-sort
+    cursor pointer
+
+.jsgrid-pager
+    padding .5em 0
+
+.jsgrid-pager-nav-button
+    padding .2em .6em
+
+.jsgrid-pager-nav-inactive-button
+    display none
+    pointer-events none
+
+.jsgrid-pager-page
+    padding .2em .6em
+
+
+.jsgrid-grid-header
+    th
+        font-family Arial, sans-serif
+        font-weight 400
+        font-size 11px
+        text-align left
+        line-height 12px
+        padding 9px 12px
+        background-image linear-gradient(0deg, #898989 0%, #797979 100%)
+        color #fff
+        border-right 1px solid #E2E2E2
+.jsgrid-grid-body
+
+    tr
+        &:nth-child(even)
+            background-color #EDEDED
+    td
+        font-family Arial, sans-serif
+        font-weight 400
+        font-size 11px
+        text-align left
+        line-height 12px
+        padding 9px 12px
+        color #808080
+        border-right 1px solid #E2E2E2
+
+
+.jsgrid-header-sort
+    position relative
+    &:after
+        display block
+        position absolute
+        content ''
+        size 10px
+        background-repeat no-repeat
+        right 8px
+        top 13px
+        background-image inline("iconArrowDown.svg")
+        transition all .3s
+.jsgrid-header-sort-desc
+    &:after
+        top 8px
+        transform rotate(180deg)
+
+.jsgrid-control-field
+    padding 0 !important
+    text-align center !important
+.jsgrid-button
+    display inline-block
+    border 0
+    outline 0
+.jsgrid-search-mode-button
+    display inline-block
+    size 21px
+    background-repeat no-repeat
+    right 8px
+    top 17px
+    background-image inline("iconFilter.png")
+    transition all .3s
+    background-position center center
+    background-color transparent
