@@ -1,0 +1,21 @@
+doctype
+html
+    head
+        title Mercedes Service
+        meta(charset='utf-8')
+        meta(name="viewport", content="width=device-width, user-scalable=yes")
+        link(href='./css/blocks.css', type="text/css", rel="stylesheet")
+        //-include _favicon.jade
+        <!--[if IE 8]><link rel="stylesheet" href="./css/blocks.ie.css"><![endif]-->
+        <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+        include _font.jade
+        include _svg.jade
+        include _mixin.jade
+
+
+    body
+        block content
+        script(src="http://api-maps.yandex.ru/2.0/?load=package.full&amp;lang=ru-RU")
+        //- script(src="./js/vendor.js")
+        //- script(src="./js/index.js")
+        script(src="/main.js")
